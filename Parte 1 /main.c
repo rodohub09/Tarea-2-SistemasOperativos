@@ -9,7 +9,7 @@ void* ejec_hebras(void* arg){
   Monitor *m = mis_datos->monitor;
   
   for (int e = 1; e <= mis_datos->etapas; e++) {
-    usleep(rand() % 1000);
+    usleep(rand() % 100);
     printf("[Hebra %ld] esperando en etapa %d\n", pthread_self(), e);
     monitor_wait(m);
     printf("[Hebra %ld] pasó barrera en etapa %d\n", pthread_self(), e);
